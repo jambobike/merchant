@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "787821001924",
+    "firebase_url": "https://merchant-528e1.firebaseio.com",
+    "project_id": "merchant-528e1",
+    "storage_bucket": "merchant-528e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787821001924:android:cd340c8b6cd7a3de",
+        "android_client_info": {
+          "package_name": "com.example.alvin.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787821001924-bdejruvl43blkkerdm7m5hk3v4c63v6k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alvin.myapplication",
+            "certificate_hash": "edd057760c3948b5e6fe88ea3d2e11ed79441d4a"
+          }
+        },
+        {
+          "client_id": "787821001924-gdkbru8kp38o3hsfiphckbra9e9h8vvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2KCg40Xo0mN6sHgnDgXcCrlOOMbRnQi0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787821001924-gdkbru8kp38o3hsfiphckbra9e9h8vvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
