@@ -1,34 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/Category" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name of Store" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Location of Store" />
+    tools:context=".AddStore">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select company image" />
+        android:text="Button"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="430dp" />
 
+    <EditText
+        android:id="@+id/Bsname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/Busname"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="37dp" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="135dp" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/BusLocation"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="285dp"
+        android:layout_height="31dp"
+        android:entries="@array/category_arrays"
+        android:prompt="@string/BusnCategory"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="284dp"
+        android:layout_height="33dp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="384dp" />
+</android.support.constraint.ConstraintLayout>

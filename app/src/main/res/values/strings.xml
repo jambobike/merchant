@@ -23,12 +23,29 @@
     <string name="pass">Password</string>
     <string name="login">Login</string>
     <string name="create">Create an Account</string>
-    
-    <string-array name="Category">
-        <item>Select Category</item>
-        <item>food</item>
-        <item>electronics</item>
-        <item>household</item>
-        <item>jewellery</item>
+
+    <string-array name="category_arrays">
+        <item>Fast Food</item>
+        <item>Medicine</item>
+        <item>Clothing</item>
+        <item>Home Accessories</item>
+        <item>Food</item>
+        <item>Groceries</item>
     </string-array>
+
+    <string name="title_activity_add_items">AddItems</string>
+
+    <string name="ItemName">Item Name</string>
+    <string name="ItemDesc">Item Description</string>
+    <string name="SelectPhoto">Select a photo</string>
+    <string name="UploadPhoto">Upload</string>
+    <string name="submit">submit</string>
+
+    <string name="AddStore">Add Store</string>
+    <string name="ManageStore">Manage Store</string>
+    <string name="Busname">Business name</string>
+    <string name="BusLocation">Business Location</string>
+
+    <string name="BusnCategory">Pick category</string>
+
 </resources>
