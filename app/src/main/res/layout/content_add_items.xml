@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddItems">
+
+    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <Button
+            android:id="@+id/buttonChoose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SelectPhoto" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/ItemName"
+            android:layout_below="@id/buttonChoose"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="218dp"
+            android:layout_height="171dp"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="55dp"
+            android:layout_below="@id/editText2"/>
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="350dp"
+            android:layout_height="95dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:hint="@string/ItemDesc"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="322dp"
+            android:layout_below="@id/imageView"/>
+
+        <Button
+            android:id="@+id/buttonUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/UploadPhoto"
+            android:layout_below="@id/editText3"/>
+
+        <Button
+            android:id="@+id/buttonsubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="447dp"
+            android:layout_below="@id/buttonUpload"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
