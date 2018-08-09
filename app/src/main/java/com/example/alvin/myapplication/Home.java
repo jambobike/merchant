@@ -33,17 +33,19 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         mBtaddStore = (Button) findViewById(R.id.addStore);
         mBtmanageStore = (Button) findViewById(R.id.manageStore);
+        mBtaddStore.setOnClickListener((View.OnClickListener) this);
+        mBtmanageStore.setOnClickListener((View.OnClickListener) this);
     }
 
     @Override
-    public void onClick(View view) {
-        if (view == mBtaddStore) {
+    public void onClick(View v) {
+        if (v == mBtaddStore) {
             Intent addStore = new Intent(Home.this, AddStore.class);
             startActivity(addStore);
         }
-        if (view == mBtmanageStore) {
+        /*if (v == mBtmanageStore) {
             Intent manageStore = new Intent(Home.this, ManageStore.class);
             startActivity(manageStore);
-        }
+        }*/
     }
 }
