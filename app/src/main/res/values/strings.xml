@@ -18,4 +18,9 @@
     <string name="title_activity_home">Home</string>
     <string name="title_activity_add_store">AddStore</string>
     <string name="title_activity_manage_store">ManageStore</string>
+
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="create">Create an Account</string>
 </resources>
