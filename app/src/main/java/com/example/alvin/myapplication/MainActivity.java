@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText txt_email;
     private EditText txt_pass;
+    private EditText txt_phone;
+    private EditText txt_fnames;
     private  Button reg_btn;
     //private  EditText txt_confirm_pass;
     private ProgressDialog progressDialog;
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         reg_btn=(Button)findViewById(R.id.signup_activity);
         txt_email=(EditText)findViewById(R.id.email);
         txt_pass=(EditText)findViewById(R.id.password);
+        txt_phone=findViewById(R.id.phone);
+        txt_fnames=findViewById(R.id.fnames);
         //txt_confirm_pass=(EditText)findViewById(R.id.confirm_pass);
         reg_btn.setOnClickListener(this);
 
@@ -49,12 +54,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void registerUser(){
         String email=txt_email.getText().toString().trim();
         String password=txt_pass.getText().toString().trim();
+        String phone=txt_phone.getText().toString().trim();
+        String fnames=txt_fnames.getText().toString().trim();
         if (TextUtils.isEmpty(email)){
             //email is empty
             Toast.makeText(this,"Enter your Email", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this,"Enter A Valid Email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(phone)){
+            //email is empty
+            Toast.makeText(this,"Enter your phone number", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (phone.length() !=10){
+            Toast.makeText(this,"Enter A Valid Phone Number", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (TextUtils.isEmpty(password)){
+            //password is empty
+            Toast.makeText(this,"Enter Password",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (password.length() !=10) {
+            Toast.makeText(this,"Password should be at least 6 characters long", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(fnames)){
             //password is empty
             Toast.makeText(this,"Enter Password",Toast.LENGTH_SHORT).show();
             return;

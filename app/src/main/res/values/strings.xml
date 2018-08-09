@@ -23,4 +23,12 @@
     <string name="pass">Password</string>
     <string name="login">Login</string>
     <string name="create">Create an Account</string>
+    
+    <string-array name="Category">
+        <item>Select Category</item>
+        <item>food</item>
+        <item>electronics</item>
+        <item>household</item>
+        <item>jewellery</item>
+    </string-array>
 </resources>

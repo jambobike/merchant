@@ -7,4 +7,15 @@
     android:layout_width="match_parent"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/addStore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Store" />
+
+    <Button
+        android:id="@+id/manageStore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Store" />
 </LinearLayout>
