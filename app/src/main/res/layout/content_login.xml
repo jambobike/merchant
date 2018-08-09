@@ -1,45 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    >
+    android:gravity="center"
+    android:background="@drawable/background_gradient"
+    android:padding="10dp">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="@string/email"
-        />
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/input_login_hint"/>
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:hint="@string/pass"
         android:inputType="textPassword"
-        />
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/input_login_hint"/>
     <Button
         android:id="@+id/login"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/login"
-        />
-    <android.support.v7.widget.AppCompatTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dont have an account? Signup."
-        />
+        android:layout_marginBottom="20dp"
+        android:background="@color/btn_login"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:text="@string/login" />
     <Button
         android:id="@+id/signup"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create"
-        android:background="@color/colorPrimaryDark"
-        />
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:text="@string/login_Register"/>
 
 
+    </LinearLayout>
 
 </LinearLayout>
