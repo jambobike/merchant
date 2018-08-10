@@ -5,6 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:id="@+id/root_layout"
     android:background="@drawable/background_gradient"
     android:padding="10dp">
 
@@ -23,7 +24,7 @@
             android:layout_marginBottom="20dp"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
+            android:padding="@dimen/login_text_padding"
             android:singleLine="true"
             android:textColor="@color/white"
             android:textColorHint="@color/input_login_hint"/>
@@ -31,19 +32,20 @@
         android:id="@+id/password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="25dp"
         android:hint="@string/pass"
         android:inputType="textPassword"
-        android:padding="10dp"
+        android:padding="@dimen/login_text_padding"
         android:singleLine="true"
         android:textColor="@color/white"
         android:textColorHint="@color/input_login_hint"/>
     <Button
         android:id="@+id/login"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="165dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:background="@color/btn_login"
+        android:background="@drawable/rounded_button"
         android:textColor="@color/white"
         android:textSize="15dp"
         android:text="@string/login" />
@@ -51,7 +53,7 @@
         android:id="@+id/signup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@null"
         android:textSize="15dp"
         android:textAllCaps="false"
