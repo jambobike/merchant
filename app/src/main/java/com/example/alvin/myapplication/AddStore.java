@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +49,14 @@ public class AddStore extends AppCompatActivity {
     }
 
     public void registerStore(){
-        /*
-        code to push items to realtime database
-         */
+        FirebaseDatabase database =  FirebaseDatabase.getInstance();
+        FirebaseUser user =  firebaseAuth.getCurrentUser();
+        String userId = user.getUid();
+        DatabaseReference mRef =  database.getReference().child("Stores").child(userId);
+        mRef.child("Bsname").setValue(Bsname);
+        mRef.child("Email").setValue(email);
+        mRef.child("location").setValue(location);
+        mRef.child("Category").setValue(spinner1);
     }
 
     public void addItemsOnSpinner2() {

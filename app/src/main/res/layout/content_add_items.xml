@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddItems">
+    tools:context=".AddItems"
+    android:layout_marginTop="@dimen/activity_vertical_margin">
 
     <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -32,10 +33,10 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="218dp"
-            android:layout_height="171dp"
+            android:layout_height="178dp"
+            android:layout_below="@id/editText2"
             tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="55dp"
-            android:layout_below="@id/editText2"/>
+            tools:layout_editor_absoluteY="55dp" />
 
         <EditText
             android:id="@+id/editText3"
@@ -48,21 +49,33 @@
             tools:layout_editor_absoluteY="322dp"
             android:layout_below="@id/imageView"/>
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editText3"
+            android:layout_below="@+id/buttonChoose"
+            android:ems="10"
+            android:hint="unit price"
+            android:inputType="number" />
+
         <Button
             android:id="@+id/buttonUpload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/UploadPhoto"
-            android:layout_below="@id/editText3"/>
+            android:layout_alignStart="@+id/buttonChoose"
+            android:layout_below="@+id/editText3"
+            android:text="@string/UploadPhoto" />
 
         <Button
             android:id="@+id/buttonsubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/buttonChoose"
+            android:layout_below="@+id/buttonUpload"
             android:text="@string/submit"
             tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="447dp"
-            android:layout_below="@id/buttonUpload"/>
+            tools:layout_editor_absoluteY="447dp" />
 
     </RelativeLayout>
 

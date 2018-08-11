@@ -43,9 +43,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             Intent addStore = new Intent(Home.this, AddStore.class);
             startActivity(addStore);
         }
-        /*if (v == mBtmanageStore) {
+        if (v == mBtmanageStore) {
             Intent manageStore = new Intent(Home.this, ManageStore.class);
             startActivity(manageStore);
-        }*/
+        }
     }
 }
