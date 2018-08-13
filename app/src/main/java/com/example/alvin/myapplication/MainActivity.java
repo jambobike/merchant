@@ -2,6 +2,7 @@ package com.example.alvin.myapplication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.IgnoreExtraProperties;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -31,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText txt_pass;
     private EditText txt_phone;
     private EditText txt_fnames;
-    private  Button reg_btn;
+    private Button reg_btn;
+    private Button loginPage;
     //private  EditText txt_confirm_pass;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -44,13 +48,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.content_main);
+        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
+
         progressDialog=new ProgressDialog(this);
         firebaseAuth=FirebaseAuth.getInstance();
+        loginPage=(Button)findViewById(R.id.loginPage);
         reg_btn=(Button)findViewById(R.id.signup_activity);
         txt_email=(EditText)findViewById(R.id.email);
         txt_pass=(EditText)findViewById(R.id.password);
         txt_phone=findViewById(R.id.phone);
         txt_fnames=findViewById(R.id.fnames);
+        loginPage.setOnClickListener((View.OnClickListener) this);
 
         rootRef = FirebaseDatabase.getInstance().getReference();
         childRef =rootRef.child("Users");
@@ -96,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this,"Enter Password",Toast.LENGTH_SHORT).show();
             return;
         }
+
         progressDialog.setMessage("Registering User...");
         progressDialog.show();
         firebaseAuth.createUserWithEmailAndPassword(email, password)
@@ -121,6 +134,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+        if (v == loginPage) {
+            Intent loginPage = new Intent(MainActivity.this, Login.class);
+            startActivity(loginPage);
+        }
 
         registerUser();
 
