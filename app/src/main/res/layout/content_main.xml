@@ -6,59 +6,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_gradient"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:text="SIGNUP" />
 
     <EditText
         android:id="@+id/fnames"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Full Names"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:padding="@dimen/login_text_padding"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/input_login_hint"/>/>
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Email Address"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/login_text_padding"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/input_login_hint"/>/>
 
     <EditText
         android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Phone Number"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:padding="@dimen/login_text_padding"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/input_login_hint"/>/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:padding="@dimen/login_text_padding"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/input_login_hint"/>/>
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Confirm Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:padding="@dimen/login_text_padding"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/input_login_hint"/>/>
 
     <Button
         android:id="@+id/signup_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:textSize="15dp"
         android:text="Signup" />
+
+    <Button
+        android:id="@+id/root_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:text="Already have an account? Log in."/>
 
 </LinearLayout>
