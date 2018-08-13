@@ -2,13 +2,14 @@ package com.example.alvin.myapplication;
 
 public class Stores {
 
+    public  String key;
     public String bsname;
     public String email;
     public String location;
     public String spinner1;
 
 
-    public Stores(String bsname, String email, String location, String spinner1) {
+    public Stores(String key, String bsname, String email, String location, String spinner1) {
         this.bsname = bsname;
         this.email = email;
         this.location = location;
@@ -31,5 +32,9 @@ public class Stores {
 
     public String getSpinner1() {
         return spinner1;
+    }
+
+    public String getKey() {
+        return key;
     }
 }

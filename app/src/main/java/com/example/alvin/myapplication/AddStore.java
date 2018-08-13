@@ -39,7 +39,6 @@ public class AddStore extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         bsname = (EditText) findViewById(R.id.bsname);
         email = (EditText) findViewById(R.id.email);
         location = (EditText) findViewById(R.id.location);
@@ -65,12 +64,14 @@ public class AddStore extends AppCompatActivity {
         String Location = location.getText().toString().trim();
         String Spinner1 = spinner1.getSelectedItem().toString();
 
-        Stores stores = new Stores(Bsname, Email, Location, Spinner1);
+        String key = rootRef.push().getKey();
+        Stores stores = new Stores(key, Bsname, Email, Location, Spinner1);
         // Database
         // Stores
         // ID -> Item
-        String key = childRef.push().getKey();
+        //
         childRef.push().setValue(stores);
+
     }
 
 }
