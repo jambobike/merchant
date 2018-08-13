@@ -33,16 +33,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddStore"
-            android:label="@string/title_activity_add_store"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ManageStore"
             android:label="@string/title_activity_manage_store"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddItems"
             android:label="@string/title_activity_add_items"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddStore"
+            android:label="@string/title_activity_add_store"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

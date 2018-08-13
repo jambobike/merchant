@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //private  EditText txt_confirm_pass;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+
+    DatabaseReference rootRef, childRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txt_pass=(EditText)findViewById(R.id.password);
         txt_phone=findViewById(R.id.phone);
         txt_fnames=findViewById(R.id.fnames);
+
+        rootRef = FirebaseDatabase.getInstance().getReference();
+        childRef =rootRef.child("Users");
+
         //txt_confirm_pass=(EditText)findViewById(R.id.confirm_pass);
         reg_btn.setOnClickListener(this);
 
@@ -105,6 +113,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
+
+        Users users = new Users(email, fnames, phone);
+        String key = childRef.push().getKey();
+        childRef.push().setValue(users);
     }
 
     @Override

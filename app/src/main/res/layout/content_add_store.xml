@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddStore"
+    android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical">
+    tools:context=".AddStore">
 
     <EditText
-        android:id="@+id/Bsname"
+        android:id="@+id/bsname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/Busname"
+        android:inputType="textPersonName"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="37dp" />
 
@@ -24,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="135dp" />
 
@@ -34,8 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/BusLocation"
+        android:inputType="textPersonName"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="251dp" />
 
@@ -56,7 +55,7 @@
         tools:layout_editor_absoluteY="384dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submitstore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
