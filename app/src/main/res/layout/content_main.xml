@@ -11,7 +11,7 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-
+//test
     <EditText
         android:id="@+id/fnames"
         android:layout_width="match_parent"
