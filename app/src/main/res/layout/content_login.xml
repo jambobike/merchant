@@ -60,7 +60,6 @@
         android:textColor="@color/white"
         android:text="@string/login_Register"/>
 
-
     </LinearLayout>
 
 </LinearLayout>
