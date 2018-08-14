@@ -1,6 +1,7 @@
 package com.example.alvin.myapplication;
 
 import android.Manifest;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -22,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
@@ -40,6 +43,8 @@ public class AddItems extends AppCompatActivity implements View.OnClickListener 
     private EditText editText2;
     private EditText editText3;
     private FirebaseAuth firebaseAuth;
+
+    DatabaseReference rootRef, childRef;
 
     //Image request code
     private int PICK_IMAGE_REQUEST = 1;
@@ -64,15 +69,14 @@ public class AddItems extends AppCompatActivity implements View.OnClickListener 
         //Initializing views
         buttonChoose = (Button) findViewById(R.id.buttonChoose);
         buttonUpload = (Button) findViewById(R.id.buttonUpload);
-        buttonsubmit = (Button) findViewById(R.id.buttonsubmit);
         imageView = (ImageView) findViewById(R.id.imageView);
-        editText = (EditText) findViewById(R.id.editText2);
+        editText = (EditText) findViewById(R.id.editText);
+        editText2 = (EditText) findViewById(R.id.editText2);
         editText3 = (EditText) findViewById(R.id.editText3);
 
         //Setting clicklistener
         buttonChoose.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
-        buttonsubmit.setOnClickListener(this);
 
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -84,6 +88,18 @@ public class AddItems extends AppCompatActivity implements View.OnClickListener 
                         .setAction("Action", null).show();
             }
         });
+
+        rootRef = FirebaseDatabase.getInstance().getReference();
+        childRef =rootRef.child("Stores");
+
+        buttonUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                uploadMultipart();
+            }
+        });
+
+
     }
 
 
@@ -94,6 +110,8 @@ public class AddItems extends AppCompatActivity implements View.OnClickListener 
     public void uploadMultipart() {
         //getting name for the image
         String name = editText.getText().toString().trim();
+        String item_name = editText2.getText().toString().trim();
+        String item_desc = editText3.getText().toString().trim();
 
         //getting the actual path of the image
         String path = getPath(filePath);
@@ -103,12 +121,25 @@ public class AddItems extends AppCompatActivity implements View.OnClickListener 
             String uploadId = UUID.randomUUID().toString();
 
             //Creating a multi part request
-            new MultipartUploadRequest(this, uploadId,Constants.UPLOAD_URL)
+            new MultipartUploadRequest(this, uploadId)
                     .addFileToUpload(path, "image") //Adding file
                     .addParameter("name", name) //Adding text parameter to the request
+                    .addParameter("Item name", item_name)
+                    .addParameter("Item Description", item_desc)
                     .setNotificationConfig(new UploadNotificationConfig())
                     .setMaxRetries(2)
                     .startUpload(); //Starting the upload
+
+
+
+            String key = rootRef.push().getKey();
+            Items items = new Items(key, name, item_name, item_desc);
+//            ClipData.Item item = new ClipData.Item(key, editText, editText2, editText3);
+            // Database
+            // Stores
+            // ID -> Item
+            //
+            childRef.push().setValue(items);
 
         } catch (Exception exc) {
             Toast.makeText(this, exc.getMessage(), Toast.LENGTH_SHORT).show();
