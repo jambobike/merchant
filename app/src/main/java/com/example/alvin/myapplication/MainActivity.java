@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if (task.isSuccessful()){
                             FirebaseUser user=firebaseAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                            Intent mainActivity=new Intent(MainActivity.this, Home.class);
+                            Intent mainActivity=new Intent(MainActivity.this, Login.class);
                             startActivity(mainActivity);
                         }else {
                             Toast.makeText(MainActivity.this, "Could not register... please try again", Toast.LENGTH_SHORT).show();
