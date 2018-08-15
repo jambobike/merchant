@@ -88,7 +88,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(this, "Please Enter Your Email", Toast.LENGTH_SHORT).show();
             return;
         }
-        progressDialog.setMessage("Logging On");
+        progressDialog.setMessage("Logging in");
         progressDialog.show();
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
