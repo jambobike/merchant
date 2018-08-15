@@ -61,27 +61,29 @@ public class ManageStore extends AppCompatActivity{
         });
 
         myRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
+
+        myRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager LM = new LinearLayoutManager(getApplicationContext());
         myRecyclerView.setLayoutManager(LM);
         myRecyclerView.setItemAnimator(new DefaultItemAnimator());
         myRecyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
 
         listData = new ArrayList<>();
-        adapter = new MyAdapter();
+        adapter = new MyAdapter(listData);
 
         FDB = FirebaseDatabase.getInstance();
+        GetDataFirebase();
 
     }
 
     void GetDataFirebase() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
-        DBR = FDB.getReference("Stores").child(uid).child("items");
+        DBR = FDB.getReference("Stores").child(uid).child("Items");
         DBR.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                MyDataSetGet data = new MyDataSetGet();
-                data = dataSnapshot.getValue(MyDataSetGet.class);
+                MyDataSetGet data = dataSnapshot.getValue(MyDataSetGet.class);
                 listData.add(data);
                 myRecyclerView.setAdapter(adapter);
             }
@@ -111,7 +113,7 @@ public class ManageStore extends AppCompatActivity{
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         List<MyDataSetGet> listArray;
 
-        public void MyAdapter(List<MyDataSetGet> List){
+        public MyAdapter(List<MyDataSetGet> List){
             this.listArray = List;
         }
 
