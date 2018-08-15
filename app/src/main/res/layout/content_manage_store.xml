@@ -17,16 +17,5 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true" />
 
-        <Button
-            android:id="@+id/addItems"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="14dp"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:text="Add Items" />
     </RelativeLayout>
 </LinearLayout>

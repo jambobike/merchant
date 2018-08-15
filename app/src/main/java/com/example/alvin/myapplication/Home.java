@@ -9,11 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "content_login";
     public Button mBtaddStore;
     public Button mBtmanageStore;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                finish();
+                //progressDialog.setMessage("Logging out...");
+                //progressDialog.show();
+                firebaseAuth.signOut();
+                Intent loginActivity=new Intent(Home.this, Login.class);
+                startActivity(loginActivity);
             }
         });
 

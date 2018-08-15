@@ -1,6 +1,7 @@
 package com.example.alvin.myapplication;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -45,9 +50,10 @@ public class AddStore extends AppCompatActivity {
         submitstore = (Button) findViewById(R.id.submitstore);
         spinner1 = (Spinner) findViewById(R.id.spinner1);
 
-
-        rootRef = FirebaseDatabase.getInstance().getReference();
-        childRef =rootRef.child("Stores");
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        rootRef = FirebaseDatabase.getInstance().getReference("Stores");
+        childRef =rootRef.child(uid);
 
         submitstore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,19 +64,24 @@ public class AddStore extends AppCompatActivity {
     }
 
     public void addStore(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
 
         String Bsname = bsname.getText().toString().trim();
         String Email = email.getText().toString().trim();
         String Location = location.getText().toString().trim();
         String Spinner1 = spinner1.getSelectedItem().toString();
+        String key = childRef.push().getKey();
 
-        String key = rootRef.push().getKey();
-        Stores stores = new Stores(key, Bsname, Email, Location, Spinner1);
+        Stores stores = new Stores(key, Bsname, Email, Location,Spinner1);
         // Database
         // Stores
         // ID -> Item
         //
+
         childRef.push().setValue(stores);
+        Toast.makeText(this,"Saved Succesfuly",Toast.LENGTH_SHORT).show();
 
     }
 
