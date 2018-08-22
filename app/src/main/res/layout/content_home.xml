@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/addStore"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Add Store" />
+        android:text="Add Store"
+        android:theme="@style/homepageButton"
+        app:layout_constraintBaseline_toBaselineOf="@+id/manageStore"
+        app:layout_constraintEnd_toStartOf="@+id/manageStore"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/manageStore"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Manage Store" />
-</LinearLayout>
+        android:layout_marginTop="172dp"
+        android:text="Manage Store"
+        android:theme="@style/homepageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addStore"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
