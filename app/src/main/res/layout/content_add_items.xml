@@ -20,6 +20,7 @@
             android:id="@+id/buttonChoose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:theme="@style/homepageButton"
             android:text="@string/SelectPhoto" />
 
         <EditText
@@ -65,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/buttonChoose"
             android:layout_below="@+id/editText3"
+            android:theme="@style/homepageButton"
             android:text="@string/UploadPhoto" />
 
         <Button
@@ -73,7 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/buttonChoose"
             android:layout_below="@+id/buttonUpload"
-            android:text="@string/submit"
+            android:text="Submit"
+            android:theme="@style/homepageButton"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="447dp" />
 
