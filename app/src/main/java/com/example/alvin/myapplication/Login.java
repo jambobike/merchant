@@ -63,7 +63,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mBtLogin.setOnClickListener((View.OnClickListener) this);
         mBtSignup.setOnClickListener((View.OnClickListener) this);
 
-
     }
 
     @Override
