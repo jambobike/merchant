@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
@@ -11,19 +11,20 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-//test
     <EditText
         android:id="@+id/fnames"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Full Names"
+        android:hint="@string/full_names"
         android:inputType="textPersonName"
         android:padding="@dimen/login_text_padding"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textColorHint="@color/input_login_hint"/>/>
+        android:textColorHint="@color/input_login_hint"
+        android:importantForAutofill="no"
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/email"
@@ -31,12 +32,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Email Address"
+        android:hint="@string/email_address"
         android:inputType="textEmailAddress"
         android:padding="@dimen/login_text_padding"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textColorHint="@color/input_login_hint"/>/>
+        android:textColorHint="@color/input_login_hint"
+        android:importantForAutofill="no"
+        tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/phone"
@@ -44,12 +47,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Phone Number"
+        android:hint="@string/phone_number"
         android:inputType="phone"
         android:padding="@dimen/login_text_padding"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textColorHint="@color/input_login_hint"/>/>
+        android:textColorHint="@color/input_login_hint"
+        android:importantForAutofill="no"
+        tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/password"
@@ -57,12 +62,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="@dimen/login_text_padding"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textColorHint="@color/input_login_hint"/>/>
+        android:textColorHint="@color/input_login_hint"
+        android:importantForAutofill="no"
+        tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/editText7"
@@ -70,12 +77,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:padding="@dimen/login_text_padding"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textColorHint="@color/input_login_hint"/>/>
+        android:textColorHint="@color/input_login_hint"
+        android:importantForAutofill="no"
+        tools:targetApi="o"/>
 
     <Button
         android:id="@+id/signup_activity"
@@ -85,8 +94,8 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_button"
         android:textColor="@color/white"
-        android:textSize="15dp"
-        android:text="Signup" />
+        android:textSize="15sp"
+        android:text="@string/signup" />
 
     <Button
         android:id="@+id/loginPage"
@@ -94,9 +103,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@null"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:text="Already have an account? Log in."/>
+        android:text="@string/already_have_an_account_log_in"/>
 
 </LinearLayout>
