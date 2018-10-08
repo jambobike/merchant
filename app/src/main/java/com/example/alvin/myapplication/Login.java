@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.jaeger.library.StatusBarUtil;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,6 +39,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_login);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        StatusBarUtil.setTransparent(Login.this);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.root_layout);
         AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
@@ -104,5 +107,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
     }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
 
 }
