@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.IgnoreExtraProperties;
+import com.jaeger.library.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.content_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        StatusBarUtil.setTransparent(MainActivity.this);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.content_main);
         AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
@@ -143,4 +146,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         registerUser();
 
     }
+
+
 }
